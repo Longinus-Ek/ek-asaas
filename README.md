@@ -2,23 +2,13 @@
 
 SDK não-oficial de integração á API do serviço www.asaas.com
 
-[![Maintainer](http://img.shields.io/badge/maintainer-@codephix-blue.svg?style=flat-square)](https://twitter.com/codephix)
-[![Source Code](https://img.shields.io/badge/source-codephix/asaas--sdk-blue.svg?style=flat-square)](https://github.com/codephix/asaas-sdk)
-[![PHP from Packagist](https://img.shields.io/packagist/php-v/codephix/asaas-sdk.svg?style=flat-square)](https://packagist.org/packages/codephix/asaas-sdk)
-[![Latest Version](https://img.shields.io/github/release/codephix/asaas-sdk.svg?style=flat-square)](https://github.com/codephix/asaas-sdk/releases)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
-[![Build](https://img.shields.io/scrutinizer/build/g/codephix/asaas-sdk.svg?style=flat-square)](https://scrutinizer-ci.com/g/codephix/asaas-sdk)
-[![Quality Score](https://img.shields.io/scrutinizer/g/codephix/asaas-sdk.svg?style=flat-square)](https://scrutinizer-ci.com/g/codephix/asaas-sdk)
-[![Total Downloads](https://img.shields.io/packagist/dt/codephix/asaas-sdk.svg?style=flat-square)](https://packagist.org/packages/codephix/asaas-sdk)
-
-
 ### Projeto em andamento
 
 
 ## Installation
 
 ```bash
-composer require codephix/asaas-sdk
+composer require longinus/asaas-sdk
 ```
 
 Exemplo
@@ -881,7 +871,11 @@ $dados = [
 ];
 
 $id = '21313231213213232' [string required] [Identificador único do documento]
-$wl->create($id, $dados)
+$wl->create($id, $dados) [Mandando arquivos via white label]
+$wl->pendentes() [Recebe uma lista dos arquivos e status deles]
+$wl->getDocument($id) [Visualiza o documento enviado e o status dele]
+$wl->update($id, $dados) [Atualiza o arquivo via white label]
+$wl->delete($id) [Deleta o arquivo via white label]
 ```
 
 
@@ -912,12 +906,6 @@ Documentação Oficial
 --------------------
 
 Obs.: Esta é uma API não oficial. Foi feita com base na documentação disponibilizada [neste link](https://asaasv3.docs.apiary.io/).
-
-
-
-## Contributing
-
-Please see [CONTRIBUTING](https://github.com/codephix/asaas-sdk/blob/master/CONTRIBUTING.md) for details.
 
 
 Creditos

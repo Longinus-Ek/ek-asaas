@@ -1,15 +1,15 @@
 {
-  "name": "codephix/asaas-sdk",
+  "name": "longinus/asaas-sdk",
   "type"       : "library",
   "description": "Asaas.com PHP API Wrapper",
   "keywords"   : ["Asaas", "API", "Payment SaaS", "Credit Card", "Boleto"],
-  "homepage": "http://www.codephix.com",
+  "homepage": "https://github.com/Longinus-Ek",
   "license": "MIT",
   "authors": [
     {
-      "name": "Max Alex",
-      "email": "contato@codephix.com",
-      "homepage": "https://www.codephix.com"
+      "name": "Érick Dias",
+      "email": "derickbass4@gmail.com",
+      "homepage": "https://github.com/Longinus-Ek"
     }
   ],
   "require": {
@@ -17,7 +17,7 @@
   },
   "autoload": {
     "psr-4": {
-      "CodePhix\\Asaas\\": "src"
+      "Longinus\\Asaas\\": "src"
     }
   }
 }
