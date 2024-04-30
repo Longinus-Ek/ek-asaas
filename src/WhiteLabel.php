@@ -29,4 +29,8 @@ class WhiteLabel
 
         return $this->http->post('/myAccount/documents/'.$id, $dados);
     }
+    public function pendentes()
+    {
+        return $this->http->get('/myAccount/documents');
+    }
 }
