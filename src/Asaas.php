@@ -1,15 +1,15 @@
 <?php
 
-namespace CodePhix\Asaas;
+namespace Longinus\Asaas;
 
-use CodePhix\Asaas\Assinatura;
-use CodePhix\Asaas\Cliente;
-use CodePhix\Asaas\Cobranca;
-use CodePhix\Asaas\Extrato;
-use CodePhix\Asaas\Notificacao;
-use CodePhix\Asaas\Transferencia;
-use CodePhix\Asaas\Webhook;
-use CodePhix\Asaas\WebhookSub;
+use Longinus\Asaas\Assinatura;
+use Longinus\Asaas\Cliente;
+use Longinus\Asaas\Cobranca;
+use Longinus\Asaas\Extrato;
+use Longinus\Asaas\Notificacao;
+use Longinus\Asaas\Transferencia;
+use Longinus\Asaas\Webhook;
+use Longinus\Asaas\WebhookSub;
 
 class Asaas {
 

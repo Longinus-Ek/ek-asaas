@@ -1,9 +1,9 @@
 <?php
 
-namespace CodePhix\Asaas;
+namespace Longinus\Asaas;
 
-use CodePhix\Asaas\Connection;
-use CodePhix\Asaas\Exceptions\ClienteException;
+use Longinus\Asaas\Connection;
+use Longinus\Asaas\Exceptions\ClienteException;
 use Exception;
 
 /**
@@ -140,7 +140,7 @@ class Cliente
     /**
      * Faz merge nas informações do cliente.
      * 
-     * @see https://asaasv3.docs.apiary.io/#reference/0/clientes/criar-novo-cliente
+     * @see https://Asaasv3.docs.apiary.io/#reference/0/clientes/criar-novo-cliente
      * @param Array $cliente
      * @return Array
      */

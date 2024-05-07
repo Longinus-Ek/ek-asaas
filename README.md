@@ -1,4 +1,4 @@
-# Asaas @CodePhix
+# Asaas @Longinus
 
 SDK não-oficial de integração á API do serviço www.asaas.com
 
@@ -8,7 +8,7 @@ SDK não-oficial de integração á API do serviço www.asaas.com
 ## Installation
 
 ```bash
-composer require longinus/asaas-sdk
+composer require Longinus/Asaas-sdk
 ```
 
 Exemplo
@@ -19,10 +19,10 @@ Exemplo
 
 require 'vendor/autoload.php';
 
-use CodePhix\Asaas\Asaas;
+use Longinus\Asaas\Asaas;
 
 // Instancie o cliente Asaas usando a instância do adapter previamente criada.
-$asaas = new Asaas('seu_token_de_acesso');
+$Asaas = new Asaas('seu_token_de_acesso');
 ```
 
 Endpoint
@@ -32,7 +32,7 @@ Caso queira usar a API em modo teste basta especificar o `ambiente` no momento e
 
 ```php
 // Obs.: Caso não seja informado o segundo parâmetro a API entra em modo de produção
-$asaas = new Asaas('seu_token_de_acesso', 'producao|homologacao');
+$Asaas = new Asaas('seu_token_de_acesso', 'producao|homologacao');
 ```
 
 
@@ -41,25 +41,25 @@ Clientes
 
 ```php
 // Retorna a listagem de clientes
-$clientes = $asaas->Cliente()->getAll(array $filtros);
+$clientes = $Asaas->Cliente()->getAll(array $filtros);
 
 // Retorna os dados do cliente de acordo com o Id
-$clientes = $asaas->Cliente()->getById(123);
+$clientes = $Asaas->Cliente()->getById(123);
 
 // Retorna os dados do cliente de acordo com o Email
-$clientes = $asaas->Cliente()->getByEmail('email@mail.com');
+$clientes = $Asaas->Cliente()->getByEmail('email@mail.com');
 
 // Insere um novo cliente
-$clientes = $asaas->Cliente()->create(array $dadosCliente);
+$clientes = $Asaas->Cliente()->create(array $dadosCliente);
 
 // Atualiza os dados do cliente
-$clientes = $asaas->Cliente()->update(123, array $dadosCliente);
+$clientes = $Asaas->Cliente()->update(123, array $dadosCliente);
 
 // Restaura um cliente
-$asaas->Cliente()->restaura(123);
+$Asaas->Cliente()->restaura(123);
 
 // Deleta uma cliente
-$asaas->Cliente()->delete(123);
+$Asaas->Cliente()->delete(123);
 ```
 
 
@@ -68,37 +68,37 @@ Cobranças
 
 ```php
 // Retorna a listagem de cobranças
-$cobrancas = $asaas->Cobranca()->getAll(array $filtros);
+$cobrancas = $Asaas->Cobranca()->getAll(array $filtros);
 
 // Retorna os dados da cobrança de acordo com o Id
-$cobranca = $asaas->Cobranca()->getById(123);
+$cobranca = $Asaas->Cobranca()->getById(123);
 
 // Retorna a listagem de cobranças de acordo com o Id do Cliente
-$cobrancas = $asaas->Cobranca()->getByCustomer($customer_id);
+$cobrancas = $Asaas->Cobranca()->getByCustomer($customer_id);
 
 // Retorna a listagem de cobranças de acordo com o Id da Assinaturas
-$cobrancas = $asaas->Cobranca()->getBySubscription($subscription_id);
+$cobrancas = $Asaas->Cobranca()->getBySubscription($subscription_id);
 
 // Insere uma nova cobrança / cobrança parcelada / cobrança split
-$cobranca = $asaas->Cobranca()->create(array $dadosCobranca);
+$cobranca = $Asaas->Cobranca()->create(array $dadosCobranca);
 
 // Atualiza os dados da cobrança
-$cobranca = $asaas->Cobranca()->update(123, array $dadosCobranca);
+$cobranca = $Asaas->Cobranca()->update(123, array $dadosCobranca);
 
 // Restaura cobrança removida
-$cobranca = $asaas->Cobranca()->restore(id);
+$cobranca = $Asaas->Cobranca()->restore(id);
 
 // Estorna cobrança
-$cobranca = $asaas->Cobranca()->estorno(id);
+$cobranca = $Asaas->Cobranca()->estorno(id);
 
 // Confirmação em dinheiro
-$cobranca = $asaas->Cobranca()->confirmacao(id);
+$cobranca = $Asaas->Cobranca()->confirmacao(id);
 
 // Desfazer confirmação de recebimento em dinheiro
-$cobranca = $asaas->Cobranca()->dezconfirmacao(id);
+$cobranca = $Asaas->Cobranca()->dezconfirmacao(id);
 
 // Deleta uma cobrança
-$asaas->Cobranca()->delete(123);
+$Asaas->Cobranca()->delete(123);
 ```
 
 
@@ -110,13 +110,13 @@ O QrCode vem em base64.
 
 ```php
 
-$Pix = $asaas->Pix()->create($id_cobranca);
+$Pix = $Asaas->Pix()->create($id_cobranca);
 if($Pix->success){
      echo '<img src="data:image/jpeg;base64, '.$Pix->encodedImage.'" />';
 }
 
-//Consulta se foi efetivado o pagamento via Pix, (Obs: Recomendo um post a cada 30s, ou um botão para confirmação do pagamento, assim não sobrecarregado o seu sistema e nem o do asaas ;) ).
-$retorno = $asaas->Pix()->get($id_cobranca);
+//Consulta se foi efetivado o pagamento via Pix, (Obs: Recomendo um post a cada 30s, ou um botão para confirmação do pagamento, assim não sobrecarregado o seu sistema e nem o do Asaas ;) ).
+$retorno = $Asaas->Pix()->get($id_cobranca);
 
 ```
 
@@ -127,14 +127,14 @@ Link de Pagamemto
 
 ```php
 // Retorna a listagem de cobranças
-$LinkPagamento = $asaas->LinkPagamento()->getAll(array $filtros);
+$LinkPagamento = $Asaas->LinkPagamento()->getAll(array $filtros);
 
 // Retorna os dados da cobrança de acordo com o Id
-$LinkPagamento = $asaas->LinkPagamento()->getById($id);
+$LinkPagamento = $Asaas->LinkPagamento()->getById($id);
 
 
 // Insere uma nova cobrança / cobrança parcelada / cobrança split
-$LinkPagamento = $asaas->LinkPagamento()->create(array $dadosLink);
+$LinkPagamento = $Asaas->LinkPagamento()->create(array $dadosLink);
 
 
 Body
@@ -218,19 +218,19 @@ $dadosLink = array(
 
 
 // Atualiza os dados da cobrança
-$LinkPagamento = $asaas->LinkPagamento()->update($id, array $dadosLink);
+$LinkPagamento = $Asaas->LinkPagamento()->update($id, array $dadosLink);
 
 // Restaura cobrança removida
-$LinkPagamento = $asaas->LinkPagamento()->restore(id);
+$LinkPagamento = $Asaas->LinkPagamento()->restore(id);
 
 // Estorna cobrança
-$LinkPagamento = $asaas->LinkPagamento()->estorno(id);
+$LinkPagamento = $Asaas->LinkPagamento()->estorno(id);
 
 // Confirmação em dinheiro
-$LinkPagamento = $asaas->LinkPagamento()->confirmacao(id);
+$LinkPagamento = $Asaas->LinkPagamento()->confirmacao(id);
 
 // Deleta uma cobrança
-$asaas->LinkPagamento()->delete(123);
+$Asaas->LinkPagamento()->delete(123);
 
 ```
 
@@ -274,13 +274,13 @@ Os status possíveis de uma cobrança são os seguintes:
 
 
 // Retorna a listagem de assinaturas
-$assinaturas = $asaas->Assinatura()->getAll(array $filtros);
+$assinaturas = $Asaas->Assinatura()->getAll(array $filtros);
 
 // Retorna os dados da assinatura de acordo com o Id
-$assinatura = $asaas->Assinatura()->getById(123);
+$assinatura = $Asaas->Assinatura()->getById(123);
 
 // Retorna a listagem de assinaturas de acordo com o Id do Cliente
-$assinaturas = $asaas->Assinatura()->getByCustomer($customer_id);
+$assinaturas = $Asaas->Assinatura()->getByCustomer($customer_id);
 
 // Insere uma nova assinatura
 
@@ -339,10 +339,10 @@ $dadosAssinatura = array(
 
 */
 
-$assinatura = $asaas->Assinatura()->create(array $dadosAssinatura);
+$assinatura = $Asaas->Assinatura()->create(array $dadosAssinatura);
 
 // Atualiza os dados da assinatura
-$assinatura = $asaas->Assinatura()->update(123, array $dadosAssinatura);
+$assinatura = $Asaas->Assinatura()->update(123, array $dadosAssinatura);
 
 Listar notas fiscais das cobranças de uma assinatura
 
@@ -355,10 +355,10 @@ $parametos = array(
 
 */
 
-$assinatura = $asaas->Assinatura()->getNotaFiscal($id, array $parametos);
+$assinatura = $Asaas->Assinatura()->getNotaFiscal($id, array $parametos);
 
 // Deleta uma assinatura
-$asaas->Assinatura()->delete(123);
+$Asaas->Assinatura()->delete(123);
 ```
 
 
@@ -663,7 +663,7 @@ $dados = array(
 );
 
 
-$NotaFiscal = $asaas->NotaFiscal()->getAll($dados);
+$NotaFiscal = $Asaas->NotaFiscal()->getAll($dados);
 
 
 /*Agenda Nota Fiscal*/
@@ -692,7 +692,7 @@ $dados = array(
 );
 
 
-$NotaFiscal = $asaas->NotaFiscal()->create($dados);
+$NotaFiscal = $Asaas->NotaFiscal()->create($dados);
 /*Agenda Nota Fiscal*/
 
 $dados = array(
@@ -714,14 +714,14 @@ $dados = array(
 );
 
 
-$NotaFiscal = $asaas->NotaFiscal()->update($dados);
+$NotaFiscal = $Asaas->NotaFiscal()->update($dados);
 
 
 //Emitir Nota Fiscal
-$NotaFiscal = $asaas->NotaFiscal()->issueInvoice($id);
+$NotaFiscal = $Asaas->NotaFiscal()->issueInvoice($id);
 
 //Listar serviços municipais
-$NotaFiscal = $asaas->NotaFiscal()->ListMunicipalServices($descricao);
+$NotaFiscal = $Asaas->NotaFiscal()->ListMunicipalServices($descricao);
 
 
 
@@ -737,7 +737,7 @@ Informações Fiscais
 
 ```php
 //Recuperar Informações Fiscais
-$InformacoesFiscais = $asaas->InformacoesFiscais()->get();
+$InformacoesFiscais = $Asaas->InformacoesFiscais()->get();
 
 
 
@@ -764,12 +764,12 @@ $dados = array(
 );
 
 
-$InformacoesFiscais = $asaas->InformacoesFiscais()->createUpdate($dados);
+$InformacoesFiscais = $Asaas->InformacoesFiscais()->createUpdate($dados);
 
 
 //Listar configurações municipais
 
-$InformacoesFiscais = $asaas->NotaFiscal()->ListMunicipalConfigurations();
+$InformacoesFiscais = $Asaas->NotaFiscal()->ListMunicipalConfigurations();
 
 
 ```
@@ -782,10 +782,10 @@ Minha Conta
 
 ```php
 //Recuperar dados comerciais
-$MinhaConta = $asaas->MinhaConta()->get();
+$MinhaConta = $Asaas->MinhaConta()->get();
 
 // Recuperar configurações de personalização
-$MinhaConta = $asaas->MinhaConta()->getConf();
+$MinhaConta = $Asaas->MinhaConta()->getConf();
 
 ```
 Web Hook
@@ -812,7 +812,7 @@ $dados2 = array(
     authToken => '123asd123asd' [string] [Token de autenticação]
     events => ['evento teste', 'evento teste2'] [array required] [Lista dos eventos que este Webhook irá observar]
 )
-$web = $asaas->WebhookSub();
+$web = $Asaas->WebhookSub();
 $webhook = $web->addInstace(array $dados, interrupted => false); [FirstParam required, SecondParam default true]
 $webhook = $web->addInstace(array $dados2, interrupted => false); [FirstParam required, SecondParam default true]
 $webhooksub = $webhook->getWebHookArray();
@@ -842,7 +842,7 @@ $dados = array(
     postalCode => "88888888" [string required] [CEP do endereço]
     webhooks => $webhook->getWebHookArray() [array of objects] [class WebHook]
 );
-$MinhaConta = $asaas->SubConta();
+$MinhaConta = $Asaas->SubConta();
 $MinhaConta->create($dados);
 
 $dados = array(
@@ -855,7 +855,7 @@ $dados = array(
 "limit" => 100 [integer] [Número de elementos da lista (max: 100)]
 );
 
-$MinhaConta = $asaas->SubConta()->getAll($dados);
+$MinhaConta = $Asaas->SubConta()->getAll($dados);
 ```
 
 White Label
@@ -863,7 +863,7 @@ White Label
 
 
 ```php
-$wl = $asaas->WhiteLabel();
+$wl = $Asaas->WhiteLabel();
 $fileExample = file_get_contents(public_path('img/jumbo.png'));
 $dados = [
 "documentFile" => new CURLFile($filePath) [Arquivo required],
@@ -884,54 +884,54 @@ Notificações
 
 ```php
 // Retorna a listagem de notificações
-$notificacoes = $asaas->Notificacao()->getAll(array $filtros);
+$notificacoes = $Asaas->Notificacao()->getAll(array $filtros);
 
 // Retorna os dados da notificação de acordo com o Id
-$notificacao = $asaas->Notificacao()->getById(123);
+$notificacao = $Asaas->Notificacao()->getById(123);
 
 // Retorna a listagem de notificações de acordo com o Id do Cliente
-$notificacoes = $asaas->Notificacao()->getByCustomer($customer_id);
+$notificacoes = $Asaas->Notificacao()->getByCustomer($customer_id);
 
 // Insere uma nova notificação
-$notificacao = $asaas->Notificacao()->create(array $dadosNotificacao);
+$notificacao = $Asaas->Notificacao()->create(array $dadosNotificacao);
 
 // Atualiza os dados da notificação
-$notificacao = $asaas->Notificacao()->update(123, array $dadosNotificacao);
+$notificacao = $Asaas->Notificacao()->update(123, array $dadosNotificacao);
 
 // Deleta uma notificação
-$asaas->Notificacao()->delete(123);
+$Asaas->Notificacao()->delete(123);
 ```
 
 Documentação Oficial
 --------------------
 
-Obs.: Esta é uma API não oficial. Foi feita com base na documentação disponibilizada [neste link](https://asaasv3.docs.apiary.io/).
+Obs.: Esta é uma API não oficial. Foi feita com base na documentação disponibilizada [neste link](https://Asaasv3.docs.apiary.io/).
 
 
 Creditos
 --------
 
-* [Codephix - www.codephix.com](http://www.codephix.com)
+* [Longinus - www.Longinus.com](http://www.Longinus.com)
 
 Suporte
 -------
 
-[Para reportar um novo bug por favor abra um novo Issue no github](https://github.com/codephix/asaas-sdk/issues)
+[Para reportar um novo bug por favor abra um novo Issue no github](https://github.com/Longinus/Asaas-sdk/issues)
 
 
 ## Support
 
-###### Security: If you discover any security related issues, please email contato@codephix.com instead of using the issue tracker.
+###### Security: If you discover any security related issues, please email contato@Longinus.com instead of using the issue tracker.
 
-Se você descobrir algum problema relacionado à segurança, envie um e-mail para contato@codephix.com em vez de usar o rastreador de problemas.
+Se você descobrir algum problema relacionado à segurança, envie um e-mail para contato@Longinus.com em vez de usar o rastreador de problemas.
 
 Thank you
 
 ## Credits
 
-- [Max Alex](https://github.com/codephix) (Developer)
-- [All Contributors](https://github.com/codephix/asaas-sdk/contributors) (This Rock)
+- [Max Alex](https://github.com/Longinus) (Developer)
+- [All Contributors](https://github.com/Longinus/Asaas-sdk/contributors) (This Rock)
 
 ## License
 
-The MIT License (MIT). Please see [License File](https://github.com/codephix/asaas-sdk/blob/master/LICENSE) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/Longinus/Asaas-sdk/blob/master/LICENSE) for more information.

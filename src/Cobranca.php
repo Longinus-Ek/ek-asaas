@@ -1,8 +1,8 @@
 <?php
 
-namespace CodePhix\Asaas;
+namespace Longinus\Asaas;
 
-use CodePhix\Asaas\Connection;
+use Longinus\Asaas\Connection;
 use \Exception;
 
 class Cobranca {
@@ -118,7 +118,7 @@ class Cobranca {
     /**
      * Faz merge nas informações das cobranças.
      *
-     * @see https://asaasv3.docs.apiary.io/#reference/0/cobrancas/criar-nova-cobrancas
+     * @see https://Asaasv3.docs.apiary.io/#reference/0/cobrancas/criar-nova-cobrancas
      * @param Array $cliente
      * @return Array
      */
@@ -150,7 +150,7 @@ class Cobranca {
     /**
      * Faz merge nas informações das cobranças.
      *
-     * @see https://asaasv3.docs.apiary.io/#reference/0/cobrancas/criar-nova-cobrancas
+     * @see https://Asaasv3.docs.apiary.io/#reference/0/cobrancas/criar-nova-cobrancas
      * @param Array $cliente
      * @return Array
      */

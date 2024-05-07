@@ -1,8 +1,8 @@
 <?php
 
-namespace CodePhix\Asaas;
+namespace Longinus\Asaas;
 
-use CodePhix\Asaas\Connection;
+use Longinus\Asaas\Connection;
 
 class Conta {
     public $http;
