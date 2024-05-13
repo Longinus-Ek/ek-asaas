@@ -33,4 +33,10 @@ class WhiteLabel
     {
         return $this->http->get('/myAccount/documents');
     }
+
+    public function statusAccount()
+    {
+        return $this->http->get('/myAccount/status');
+    }
+
 }
