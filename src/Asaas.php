@@ -177,5 +177,4 @@ class Asaas {
         return $this->informacoesFinanceiras;
     }
 
-
 }

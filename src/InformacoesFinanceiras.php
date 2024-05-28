@@ -14,7 +14,7 @@ class InformacoesFinanceiras {
     }
 
     // Retorna o saldo da conta
-    public function saldo(array $dadosCobranca){
+    public function saldo(){
         return $this->http->get('/finance/balance');
     }
 
