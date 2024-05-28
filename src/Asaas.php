@@ -34,6 +34,8 @@ class Asaas {
     public $Conta;
     public $SubConta;
 
+    private $informacoesFinanceiras;
+
     private $connection;
 
     public function __construct($token, $status = false) {
@@ -60,6 +62,7 @@ class Asaas {
         $this->Conta     = new Conta($this->connection);
         $this->SubConta     = new SubConta($this->connection);
         $this->whitelabel     = new WhiteLabel($this->connection);
+        $this->informacoesFinanceiras = new InformacoesFiscais($this->connection);
     }
 
     public function Assinatura(){
@@ -167,5 +170,12 @@ class Asaas {
         $this->whitelabel     = new WhiteLabel($this->connection);
         return $this->whitelabel;
     }
+
+    public function InformacoesFinanceiras()
+    {
+        $this->informacoesFinanceiras = new InformacoesFinanceiras($this->connection);
+        return $this->informacoesFinanceiras;
+    }
+
 
 }
