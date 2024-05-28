@@ -10,6 +10,7 @@ use Longinus\Asaas\Notificacao;
 use Longinus\Asaas\Transferencia;
 use Longinus\Asaas\Webhook;
 use Longinus\Asaas\WebhookSub;
+use Longinus\Asaas\InformacoesFinanceiras;
 
 class Asaas {
 
@@ -33,8 +34,7 @@ class Asaas {
     public $Parcelamento;
     public $Conta;
     public $SubConta;
-
-    private $informacoesFinanceiras;
+    public $InformacoesFinanceiras;
 
     private $connection;
 
@@ -62,7 +62,7 @@ class Asaas {
         $this->Conta     = new Conta($this->connection);
         $this->SubConta     = new SubConta($this->connection);
         $this->whitelabel     = new WhiteLabel($this->connection);
-        $this->informacoesFinanceiras = new InformacoesFiscais($this->connection);
+        $this->InformacoesFinanceiras = new InformacoesFinanceiras($this->connection);
     }
 
     public function Assinatura(){
