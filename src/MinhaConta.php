@@ -21,4 +21,9 @@ class MinhaConta {
         return $this->http->get('/myAccount/paymentCheckoutConfig/');
     }
 
+    public function getTaxas()
+    {
+        return $this->http->get('/myAccount/fees');
+    }
+
 }
